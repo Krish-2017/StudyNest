@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: studynest-mdu-notes
+    runtime: node
+    plan: free
+    buildCommand: ""
+    startCommand: node server.mjs
+    healthCheckPath: /api/health
+    envVars:
+      - key: AI_PROVIDER
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-5-mini
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.0-flash
