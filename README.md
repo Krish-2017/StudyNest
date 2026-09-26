@@ -1,39 +1,30 @@
-# StudyNest — MDU B.Tech Notes
+# TIT&S Notes — Bhiwani B.Tech Study Hub
 
-StudyNest is a responsive notes library for MDU Rohtak B.Tech students. It includes note filters, bookmarks, previews, a moderated upload prototype, and an AI study assistant that runs in an honest demo mode until a provider is configured.
+Dark-theme student notes platform for Technological Institute of Textile Sciences (TIT&S), Bhiwani.
 
-## Run locally
+Features:
+- TIT&S-inspired emblem based on the supplied logo
+- Branch and semester filters
+- Built-in B.Tech study notes
+- PYQ section
+- AI Study Assistant
+- OpenAI or Gemini server-side integration
+- Upload-material UI
+- Responsive design
 
-Requirements: Node.js 18 or newer.
+The organization is inspired by the general academic-platform structure described publicly for NotesNeo, while using original branding and implementation.
 
+## Local
+Requires Node.js 18+.
 ```bash
 cp .env.example .env
 npm start
 ```
 
-Open `http://localhost:3000`. The app works in demo mode without any credentials.
+## AI
+Keep keys server-side. Set AI_PROVIDER and the matching provider key on your hosting platform.
 
-## Configure AI securely
+## Deployment
+The repository includes render.yaml for a Node web service. Connect the repo to Render as a Blueprint and add the AI environment variables.
 
-Set environment variables in your host dashboard, not in `index.html`, the Git repository, or browser dev tools.
-
-### OpenAI
-
-Set `AI_PROVIDER=openai`, `OPENAI_API_KEY`, and optionally `OPENAI_MODEL`. The server calls OpenAI's server-side Responses API. The browser only calls the app's `/api/ai` route.
-
-### Google Gemini
-
-Set `AI_PROVIDER=gemini`, `GEMINI_API_KEY`, and optionally `GEMINI_MODEL`. The server calls Gemini's server-side `generateContent` route.
-
-## Deploy to Render
-
-1. Create a GitHub repository and commit these files at its root.
-2. In Render, choose **New → Blueprint** and connect that repository. Render will detect `render.yaml`.
-3. Add the environment variables for the provider you chose. Do not add any secret to the repository.
-4. Deploy. Confirm `https://YOUR-SERVICE.onrender.com/api/health` returns `{ "ok": true }`.
-
-The Render free plan can spin down when idle. Configure a paid instance if instant availability is important.
-
-## Production next steps
-
-The current notes and uploads are realistic local demo data. A production version should add authentication, object storage for uploads, a database, malware/file checks, a moderation queue, rate limits, and a server-side note-retrieval pipeline before grounding AI answers in user-uploaded PDFs.
+The included notes are project-created study material, not official TIT&S course material. Verify them against the current syllabus and faculty resources.

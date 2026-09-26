@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+<circle cx="250" cy="250" r="242" fill="#e7ad69" stroke="#d99a52" stroke-width="8"/>
+<circle cx="250" cy="250" r="220" fill="none" stroke="#d99a52" stroke-width="7"/>
+<circle cx="250" cy="250" r="198" fill="none" stroke="#d99a52" stroke-width="3"/>
+<text x="250" y="268" text-anchor="middle" font-family="Georgia,serif" font-size="128" font-weight="700" fill="#8d2020">TIT</text>
+<line x1="135" y1="295" x2="365" y2="295" stroke="#8d2020" stroke-width="8"/>
+<text x="250" y="335" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" fill="#8d2020">Since 1943</text>
+<text x="250" y="65" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#d99a52">TECHNOLOGICAL INSTITUTE OF TEXTILE &amp; SCIENCES</text>
+<text x="250" y="462" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#d99a52">THE BHIWANI</text>
+</svg>
