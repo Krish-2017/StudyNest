@@ -4,7 +4,7 @@ import {extname,join,normalize} from "node:path";
 import {fileURLToPath} from "node:url";
 import {randomBytes,createHmac,scryptSync,timingSafeEqual} from "node:crypto";
 const root=fileURLToPath(new URL(".",import.meta.url)),port=Number(process.env.PORT||3000),MAX=15*1024*1024,SESSION_SECRET=process.env.SESSION_SECRET||"";
-const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".css":"text/css; charset=utf-8",".json":"application/json; charset=utf-8",".png":"image/png",".svg":"image/svg+xml",".pdf":"application/pdf",".ico":"image/x-icon",".doc":"application/msword",".docx":"application/vnd.openxmlformats-officedocument.wordprocessingml.document",".txt":"text/plain"};
+const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".css":"text/css; charset=utf-8",".json":"application/json; charset=utf-8",".png":"image/png",".svg":"image/svg+xml",".jpg":"image/jpeg",".pdf":"application/pdf",".ico":"image/x-icon",".doc":"application/msword",".docx":"application/vnd.openxmlformats-officedocument.wordprocessingml.document",".txt":"text/plain"};
 function json(res,s,p,h={}){res.writeHead(s,Object.assign({"Content-Type":"application/json; charset=utf-8","Cache-Control":"no-store"},h));res.end(JSON.stringify(p))}
 async function readBody(req){let s="";for await(const c of req){s+=c;if(s.length>MAX)throw Error("Request too large")}try{return JSON.parse(s||"{}")}catch{throw Error("Invalid JSON")}}
 function openaiText(d){if(d.output_text)return d.output_text;return(d.output||[]).flatMap(x=>x.content||[]).filter(x=>x.type==="output_text").map(x=>x.text||"").join("\n")||"No text returned."}
