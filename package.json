@@ -1,13 +1,15 @@
 {
-  "name": "studynest-mdu-notes",
+  "name": "tits-notes",
   "version": "1.0.0",
   "private": true,
-  "description": "MDU Rohtak B.Tech study-resource library with an optional AI assistant.",
+  "description": "TIT&S Bhiwani student notes, PYQs and live AI study assistant.",
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
     "dev": "node --watch server.mjs",
     "test": "node --test test/server.test.mjs"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }
