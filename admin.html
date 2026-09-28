@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TIT&S Notes | Admin Portal</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+<main class="wrap" style="min-height:100vh;display:grid;place-items:center">
+<div class="modalbox" style="max-width:430px;width:100%">
+<div class="login-brand"><img src="/assets/tits-logo-original.jpg" alt="TIT&S Bhiwani logo"><div><div class="eyebrow">PRIVATE ADMIN PORTAL</div><h2>Administrator Login</h2></div></div>
+<p style="color:var(--muted);font-size:12px">This page is for the two authorized TIT&S Notes administrators. The admin portal is not shown in the public website navigation.</p>
+<form id="adminForm"><div class="field" style="margin-bottom:12px"><label>Email</label><input id="email" type="email" autocomplete="username" required></div><div class="field" style="margin-bottom:12px"><label>Password</label><input id="password" type="password" autocomplete="current-password" required></div><button class="btn gold" style="width:100%">Sign in as Administrator →</button></form>
+<div id="error" style="color:#ff8f8f;font-size:11px;margin-top:10px"></div><p style="margin-top:16px"><a href="/" style="color:var(--gold)">← Back to TIT&S Notes</a></p>
+</div></main>
+<script>
+document.getElementById("adminForm").onsubmit=async function(e){e.preventDefault();var error=document.getElementById("error");error.textContent="";try{var r=await fetch("/api/auth/login",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:document.getElementById("email").value.trim(),password:document.getElementById("password").value})}),d=await r.json();if(!r.ok)throw Error(d.error||"Invalid login details.");if(d.user.role!=="admin")throw Error("This account is not an administrator.");location.href="/#manage"}catch(err){error.textContent=err.message||"Login failed."}};
+</script></body></html>
